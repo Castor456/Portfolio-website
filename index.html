@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rishi Boban</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="nav-wrap">
+      <div class="brand">
+        <div class="brand-text">
+          <h1 class="name">Rishi Boban</h1>
+          <p class="tag">Cloud & DevOps Engineer</p>
+        </div>
+      </div>
+      <nav class="site-nav" id="site-nav">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <a href="www.linkedin.com/in/rishi-boban-080808aadydv00" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-inner">
+        <h2 class="intro">Rishi Boban</h2>
+        <p class="lead">Cloud & DevOps Engineer — building scalable, observable, and secure systems.</p>
+        <a class="cta" href="#projects">View Projects</a>
+      </div>
+    </section>
+
+    <section id="about" class="panel">
+      <div class="container">
+        <h2>About</h2>
+        <p class="muted">Cloud computing specialist with strong background in designing, deploying,
+and managing cloud infrastructure. Skilled in AWS, Azure, and Google
+Cloud, with focus on automation, scalability, and security. Known for
+fostering collaborative team environments and adapting to evolving
+project needs to drive results. Respected for reliability and strategic
+problem-solving abilities. Experienced with cloud architecture and system
+integration, ensuring seamless cloud operations. Utilizes automation tools
+to maximize efficiency and security. Track record of managing cloud
+resources to optimize performance and reduce costs.</p>
+      </div>
+    </section>
+
+    <section id="projects" class="panel">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="grid project-grid">
+          <!-- Empty project cards to fill later -->
+          <article class="card">
+            <h3>Project Title</h3>
+            <p class="muted">Short description. Add technologies used (e.g., AWS, Terraform, Kubernetes).</p>
+            <div class="meta"><span class="badge">Type</span><a class="btn" href="#">Details</a></div>
+          </article>
+
+          <article class="card">
+            <h3>Project Title</h3>
+            <p class="muted">Short description.</p>
+            <div class="meta"><span class="badge">Type</span><a class="btn" href="#">Details</a></div>
+          </article>
+
+          <article class="card">
+            <h3>Project Title</h3>
+            <p class="muted">Short description.</p>
+            <div class="meta"><span class="badge">Type</span><a class="btn" href="#">Details</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications" class="panel">
+      <div class="container">
+        <h2>Certifications</h2>
+        <div class="cert-grid">
+          <div class="cert-item">
+            <h4>Certification Name</h4>
+            <p class="muted">Issuing Organization — Year</p>
+          </div>
+          <div class="cert-item">
+            <h4>Certification Name</h4>
+            <p class="muted">Issuing Organization — Year</p>
+          </div>
+          <div class="cert-item">
+            <h4>Certification Name</h4>
+            <p class="muted">Issuing Organization — Year</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="panel">
+      <div class="container">
+        <h2>Experience</h2>
+        <div class="timeline">
+          <div class="exp-card">
+            <h3>Junior Support Engineer</h3>
+            <p class="muted">Unifycx • 2024 AUGUST – 2025 NOVEMBER</p>
+            <ul>
+              <li>WordPress issues, including plugin/theme conflicts, broken layouts,
+PHP/MySQL errors, and core update failures.
+</li>
+              <li>Provided front-end and back-end troubleshooting, ensuring crossbrowser and mobile compatibility.</li>
+              <li>Optimized website performance by implementing caching, database
+clean up, image optimization, and CDN integration.
+</li>
+              <li>Handled malware removal, SSL issues, and applied WordPress
+security best practices to protect sites from vulnerabilities.</li>
+              <li>Restored and migrated WordPress websites across different hosting
+environments with minimal downtime</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="panel">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="muted">Use the form below to send a message.</p>
+
+        <form id="contact-form" method="POST" action="submit.php" novalidate>
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required />
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          </div>
+
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
+          </div>
+
+          <div class="form-row captcha-row">
+            <label for="captcha">Please solve: <strong>3 + 4 = ?</strong></label>
+            <input id="captcha" name="captcha" type="text" placeholder="Enter answer" required />
+          </div>
+
+          <div class="form-row">
+            <button type="submit" class="send-btn">Send Message</button>
+          </div>
+
+          <div id="status-box" class="status-box" aria-live="polite" role="status" hidden></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 — All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
