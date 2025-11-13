@@ -8,16 +8,27 @@ document.addEventListener('DOMContentLoaded', function(){
     else nav.style.display = 'flex';
   });
 
-  // smooth scroll for nav links
-  document.querySelectorAll('.site-nav a').forEach(a=>{
-    a.addEventListener('click', function(e){
+// smooth scroll for nav links
+document.querySelectorAll('.site-nav a').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+
+    // Only intercept internal links (those starting with "#")
+    if (href.startsWith('#')) {
       e.preventDefault();
-      const id = this.getAttribute('href');
-      const el = document.querySelector(id);
-      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
-      if(window.innerWidth <= 880) nav.style.display = '';
-    });
+      const el = document.querySelector(href);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    // For external links (like LinkedIn), let them open normally
+    else {
+      // Close nav menu if on mobile view
+      if (window.innerWidth <= 880) nav.style.display = '';
+      return; // no preventDefault()
+    }
+
+    if (window.innerWidth <= 880) nav.style.display = '';
   });
+});
 
   // contact form AJAX
   const form = document.getElementById('contact-form');
