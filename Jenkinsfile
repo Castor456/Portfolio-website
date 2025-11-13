@@ -11,7 +11,7 @@ pipeline {
         stage('Deploy to Remote Server') {
             steps {
                 echo 'Deploying website to remote host...'
-                ssshagent (credentials: ['cpanelssh']) {
+                sshagent (credentials: ['cpanelssh']) {
 		sh '''
                 rsync -avz -e "ssh -o StrictHostKeyChecking=no" ./ \
                 vmfmzkmy@sh00618.bluehost.com:/repositories/Portfolio-website/
