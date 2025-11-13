@@ -1,18 +1,33 @@
 /* Dark futuristic portfolio - complete site styles */
-:root{
-  --bg:#0b0c0e;
-  --panel:#121316;
-  --muted:#9aa6a6;
-  --accent:#00ffcc;
-  --accent-2:#0099ff;
-  --glass: rgba(255,255,255,0.03);
+:root {
+  /* Neon Cloud Theme */
+  --bg: #020617;                /* deep navy blue background */
+  --panel: #0a0f24;             /* slightly lighter navy for cards/panels */
+  --muted: #94a3b8;             /* muted gray-blue for text */
+  --accent: #00e5ff;            /* bright neon cyan */
+  --accent-2: #ff00c8;          /* glowing magenta/pink */
+  --glass: rgba(255, 255, 255, 0.03);
 }
 
+
 *{box-sizing:border-box}
-body{margin:0;font-family:Inter, Roboto, system-ui, Arial, sans-serif;background:linear-gradient(180deg,#070708 0%, #0b0c0e 100%);color:#e6eef0;}
+body {
+  margin: 0;
+  font-family: Inter, Roboto, system-ui, Arial, sans-serif;
+  background: radial-gradient(circle at top center, #081021 0%, #020617 100%);
+  color: #e0f7fa;
+}
 
 /* Header / sticky nav */
-.site-header{position:sticky;top:0;z-index:40;background:linear-gradient(180deg, rgba(11,12,14,0.6), rgba(11,12,14,0.4));backdrop-filter:blur(6px);border-bottom:1px solid rgba(0,255,204,0.04)}
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: linear-gradient(180deg, rgba(2, 6, 23, 0.8), rgba(10, 15, 36, 0.6));
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.05);
+}
 .nav-wrap{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:12px 20px}
 .brand{display:flex;align-items:center;gap:12px}
 .logo{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 6px 18px rgba(0,153,255,0.08)}
@@ -22,7 +37,12 @@ body{margin:0;font-family:Inter, Roboto, system-ui, Arial, sans-serif;background
 /* nav */
 .site-nav{display:flex;gap:18px;align-items:center}
 .site-nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;transition:all 160ms ease}
-.site-nav a:hover{color:var(--accent);background:rgba(0,255,204,0.02);box-shadow:0 6px 18px rgba(0,255,204,0.03)}
+.site-nav a:hover {
+  color: var(--accent);
+  background: rgba(0, 229, 255, 0.08);
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.2);
+  text-shadow: 0 0 6px var(--accent);
+}
 
 /* hamburger for mobile */
 .nav-toggle{display:none;background:none;border:none;color:var(--muted);font-size:20px;padding:6px;border-radius:6px}
@@ -32,7 +52,18 @@ body{margin:0;font-family:Inter, Roboto, system-ui, Arial, sans-serif;background
 .hero-inner{max-width:900px;margin:0 auto}
 .intro{font-size:36px;color:var(--accent);margin:0 0 8px}
 .lead{color:var(--muted);margin-bottom:18px}
-.cta{display:inline-block;padding:10px 18px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#041018;text-decoration:none;font-weight:600;box-shadow:0 10px 30px rgba(0,153,255,0.06)}
+.cta, .send-btn {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #fff;
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.3), 0 0 25px rgba(255, 0, 200, 0.15);
+  transition: all 0.25s ease;
+}
+
+.cta:hover, .send-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.5), 0 0 40px rgba(255, 0, 200, 0.25);
+}
+
 
 /* panels */
 .panel{padding:60px 20px}
@@ -44,8 +75,16 @@ h2{color:var(--accent);font-size:22px;margin-bottom:12px;text-shadow:0 0 8px rgb
 
 /* grids & cards */
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.card{background:linear-gradient(180deg,#141416,#101113);padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);box-shadow:0 6px 24px rgba(0,0,0,0.6);transition:transform 260ms ease,box-shadow 260ms ease}
-.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,153,255,0.08)}
+.card, .cert-item, .exp-card {
+  background: linear-gradient(180deg, #0a0f24, #060b18);
+  border: 1px solid rgba(0, 229, 255, 0.06);
+  box-shadow: 0 0 20px rgba(255, 0, 200, 0.05);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.25), 0 0 40px rgba(255, 0, 200, 0.15);
+}
 .card h3{color:var(--accent);margin-top:0}
 .meta{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
 .badge{background:rgba(0,255,204,0.06);padding:6px 8px;border-radius:8px;color:var(--accent);font-size:12px}
@@ -87,5 +126,7 @@ textarea{min-height:120px;resize:vertical}
   .nav-toggle{display:block}
   .nav-wrap{gap:10px}
   .brand-text .name{font-size:14px}
-  .intro{font-size:28px}
+  .intro {
+  text-shadow: 0 0 12px rgba(0, 229, 255, 0.5), 0 0 24px rgba(255, 0, 200, 0.3);
+}
 }
