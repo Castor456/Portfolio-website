@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home4/vmfmzkmy/repositories/Portfolio-website/
+    - /bin/cp -R * $DEPLOYPATH
