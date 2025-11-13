@@ -14,7 +14,7 @@ pipeline {
                 sshagent (credentials: ['cpanelssh']) {
 		sh '''
                 rsync -avz -e "ssh -o StrictHostKeyChecking=no" ./ \
-                vmfmzkmy@sh00618.bluehost.com:/repositories/Portfolio-website/
+                vmfmzkmy@sh00618.bluehost.com:/home4/vmfmzkmy/repositories/Portfolio-website/
                 '''
 		}
             }
