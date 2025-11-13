@@ -16,6 +16,7 @@ pipeline {
                 rsync -avz -e "ssh -o StrictHostKeyChecking=no" ./ \
                 vmfmzkmy@sh00618.bluehost.com:/repositories/Portfolio-website/
                 '''
+		}
             }
         }
     }
