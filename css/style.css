@@ -52,18 +52,42 @@ body {
 .hero-inner{max-width:900px;margin:0 auto}
 .intro{font-size:36px;color:var(--accent);margin:0 0 8px}
 .lead{color:var(--muted);margin-bottom:18px}
-.cta, .send-btn {
+.cta {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.4px;
+  color: #ffffff;
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  color: #fff;
-  box-shadow: 0 0 15px rgba(0, 229, 255, 0.3), 0 0 25px rgba(255, 0, 200, 0.15);
+  text-decoration: none;
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.3), 0 0 20px rgba(255, 0, 200, 0.2);
   transition: all 0.25s ease;
+  border: none;
+  position: relative;
+  z-index: 1;
 }
 
-.cta:hover, .send-btn:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 0 25px rgba(0, 229, 255, 0.5), 0 0 40px rgba(255, 0, 200, 0.25);
+.cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: linear-gradient(90deg, var(--accent-2), var(--accent));
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: -1;
 }
 
+.cta:hover::before {
+  opacity: 1;
+}
+
+.cta:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.5), 0 0 40px rgba(255, 0, 200, 0.3);
+}
 
 /* panels */
 .panel{padding:60px 20px}
