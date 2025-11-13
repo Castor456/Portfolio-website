@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Castor456/Portfolio-website.git'
+            }
+        }
+
+        stage('Deploy to Remote Server') {
+            steps {
+                echo 'Deploying website to remote host...'
+                ssshagent (credentials: ['cpanelssh']) {
+		sh '''
+                rsync -avz -e "ssh -o StrictHostKeyChecking=no" ./ \
+                vmfmzkmy@sh00618.bluehost.com:/repositories/Portfolio-website/
+                '''
+            }
+        }
+    }
+
+    post {
+        success {
+            echo '✅ Deployment complete!'
+        }
+        failure {
+            echo '❌ Deployment failed.'
+        }
+    }
+}
