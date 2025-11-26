@@ -12,12 +12,12 @@ pipeline {
             steps {
                 echo 'Deploying website to remote host...'
                 sh """
-    rsync -avz --delete \
-        --exclude 'README.txt' \
-        --exclude '.git/' \
-        --exclude 'node_modules/' \
-        --exclude 'Jenkinsfile' \
-        """
+                         rsync -avz --delete \
+                         --exclude 'README.txt' \
+                         --exclude '.git/' \
+                         --exclude 'node_modules/' \
+                         --exclude 'Jenkinsfile' \
+                        """
 
 
 		sshagent (credentials: ['cpanelssh']) {
