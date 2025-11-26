@@ -20,7 +20,7 @@ pipeline {
                          --exclude 'node_modules/' \
                          --exclude 'Jenkinsfile' \
                          -e "ssh -o StrictHostKeyChecking=no" ./ \
-                vmfmzkmy@sh00618.bluehost.com:/home4/vmfmzkmy/repositories/Portfolio-website/
+                vmfmzkmy@sh00618.bluehost.com:~/home4/vmfmzkmy/repositories/Portfolio-website/
                 '''
 		}
             }
