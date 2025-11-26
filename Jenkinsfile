@@ -17,6 +17,8 @@ pipeline {
                 rsync -avz --delete \
                          --exclude 'README.txt' \
                          --exclude '.git/' \
+                         --exclude '.cpanel.yml/' \
+                         --exclude '/submissions/' \
                          --exclude 'node_modules/' \
                          --exclude 'Jenkinsfile' \
                          -e "ssh -o StrictHostKeyChecking=no" ./ \
