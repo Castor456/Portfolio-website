@@ -17,9 +17,9 @@ pipeline {
                         '--exclude=*.log',
                         '--exclude=tests/',
                         '--exclude=README.md'
-			'--exclude=README.txt'
-			'--exclude=Jenkinsfile'
-			'--exclude=.cpanel.yml'
+            			'--exclude=README.txt'
+            			'--exclude=Jenkinsfile'
+            			'--exclude=.cpanel.yml'
                     ]
 
 		sshagent (credentials: ['cpanelssh']) {
