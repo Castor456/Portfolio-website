@@ -16,8 +16,8 @@ pipeline {
 		sh '''
                 rsync -avz --delete \
                          --exclude 'README.txt' \
-                         --exclude '.git/' \
-                         --exclude '.cpanel.yml/' \
+                         --exclude '/.git/' \
+                         --exclude '.cpanel.yml' \
                          --exclude '/submissions/' \
                          --exclude 'node_modules/' \
                          --exclude 'Jenkinsfile' \
