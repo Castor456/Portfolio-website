@@ -1,32 +1,28 @@
 // Smooth nav toggling and smooth scroll + AJAX contact submit
 document.addEventListener('DOMContentLoaded', function(){
   // nav toggle
-  const toggle = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.site-nav');
-  toggle && toggle.addEventListener('click', ()=>{
-    if(nav.style.display === 'flex') nav.style.display = '';
-    else nav.style.display = 'flex';
-  });
+const toggle = document.querySelector('.nav-toggle');
+const nav = document.querySelector('.site-nav');
+
+toggle && toggle.addEventListener('click', () => {
+  nav.classList.toggle('open');
+});
 
 // smooth scroll for nav links
 document.querySelectorAll('.site-nav a').forEach(a => {
   a.addEventListener('click', function(e) {
     const href = this.getAttribute('href');
 
-    // Only intercept internal links (those starting with "#")
     if (href.startsWith('#')) {
       e.preventDefault();
       const el = document.querySelector(href);
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-    // For external links (like LinkedIn), let them open normally
-    else {
-      // Close nav menu if on mobile view
-      if (window.innerWidth <= 880) nav.style.display = '';
-      return; // no preventDefault()
-    }
 
-    if (window.innerWidth <= 880) nav.style.display = '';
+    // Close the menu on mobile
+    if (window.innerWidth <= 880) {
+      nav.classList.remove('open');
+    }
   });
 });
 

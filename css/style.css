@@ -153,4 +153,42 @@ textarea{min-height:120px;resize:vertical}
   .intro {
   text-shadow: 0 0 12px rgba(0, 229, 255, 0.5), 0 0 24px rgba(255, 0, 200, 0.3);
 }
+
+/* --- FIX: Mobile Navigation Dropdown --- */
+@media (max-width: 880px) {
+
+  /* hide menu by default (already present), but now properly override when open */
+  .site-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: rgba(2, 6, 23, 0.95);
+    padding: 20px 0;
+    gap: 18px;
+    text-align: center;
+    border-top: 1px solid rgba(0, 229, 255, 0.1);
+    z-index: 999;
+  }
+
+  /* show menu when JS adds class */
+  .site-nav.open {
+    display: flex;
+  }
+
+  /* improve link spacing on mobile */
+  .site-nav a {
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+
+  /* hamburger spacing */
+  .nav-toggle {
+    display: block;
+    font-size: 26px;
+    padding: 8px 10px;
+  }
+}
 }
