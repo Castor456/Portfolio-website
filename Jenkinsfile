@@ -11,7 +11,14 @@ pipeline {
         stage('Deploy to Remote Server') {
             steps {
                 echo 'Deploying website to remote host...'
-                def excludes = ['--exclude=.git/','--exclude=node_modules/','--exclude=*.log','--exclude=tests/','--exclude=README.md','--exclude=README.txt','--exclude=Jenkinsfile','--exclude=.cpanel.yml']
+                sh """
+    rsync -avz --delete \
+        --exclude 'README.txt' \
+        --exclude '.git/' \
+        --exclude 'node_modules/' \
+        --exclude 'Jenkinsfile' \
+        """
+
 
 		sshagent (credentials: ['cpanelssh']) {
 		sh '''
