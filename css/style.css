@@ -129,8 +129,14 @@ h2{color:var(--accent);font-size:22px;margin-bottom:12px;text-shadow:0 0 8px rgb
   background: linear-gradient(180deg, #0a0f24, #060b18);
   border: 1px solid rgba(0, 229, 255, 0.06);
   box-shadow: 0 0 20px rgba(255, 0, 200, 0.05);
-  border-radius: 22px;   /* <--- MAIN CHANGE */
-  padding: 20px;         /* keeps shape balanced */
+  border-radius: 22px;
+  padding: 20px;
+
+  /* NEW: make card content push meta to bottom */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .card:hover {
@@ -148,7 +154,7 @@ h2{color:var(--accent);font-size:22px;margin-bottom:12px;text-shadow:0 0 8px rgb
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 14px;
+  margin-top: 20px;   /* increased a little for spacing */
 }
 
 .badge {
