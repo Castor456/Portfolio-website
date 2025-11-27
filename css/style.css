@@ -89,6 +89,24 @@ body {
   box-shadow: 0 0 25px rgba(0, 229, 255, 0.5), 0 0 40px rgba(255, 0, 200, 0.3);
 }
 
+/* certificate */
+.cert-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius: 8px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.cert-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 18px var(--accent);
+}
+
 /* panels */
 .panel{padding:60px 20px}
 .container{max-width:1100px;margin:0 auto}
@@ -98,25 +116,75 @@ h2{color:var(--accent);font-size:22px;margin-bottom:12px;text-shadow:0 0 8px rgb
 .muted{color:var(--muted)}
 
 /* grids & cards */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.card, .cert-item, .exp-card {
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* Add smooth rounded corners here */
+.card,
+.cert-item,
+.exp-card {
   background: linear-gradient(180deg, #0a0f24, #060b18);
   border: 1px solid rgba(0, 229, 255, 0.06);
   box-shadow: 0 0 20px rgba(255, 0, 200, 0.05);
+  border-radius: 22px;   /* <--- MAIN CHANGE */
+  padding: 20px;         /* keeps shape balanced */
 }
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 0 25px rgba(0, 229, 255, 0.25), 0 0 40px rgba(255, 0, 200, 0.15);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.25),
+              0 0 40px rgba(255, 0, 200, 0.15);
 }
-.card h3{color:var(--accent);margin-top:0}
-.meta{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
-.badge{background:rgba(0,255,204,0.06);padding:6px 8px;border-radius:8px;color:var(--accent);font-size:12px}
-.btn{color:var(--accent);text-decoration:none;border:1px solid rgba(0,255,204,0.06);padding:6px 10px;border-radius:8px}
+
+.card h3 {
+  color: var(--accent);
+  margin-top: 0;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.badge {
+  background: rgba(0,255,204,0.06);
+  padding: 6px 8px;
+  border-radius: 10px;
+  color: var(--accent);
+  font-size: 12px;
+}
+
+.btn {
+  color: var(--accent);
+  text-decoration: none;
+  border: 1px solid rgba(0,255,204,0.06);
+  padding: 6px 10px;
+  border-radius: 10px;
+}
 
 /* certs */
-.cert-grid{display:flex;flex-wrap:wrap;gap:18px;justify-content:flex-start}
-.cert-item{background:linear-gradient(180deg,#141416,#0f1012);padding:14px;border-radius:10px;min-width:220px;border-left:4px solid var(--accent);box-shadow:0 6px 18px rgba(0,255,204,0.03)}
+.cert-btn {
+  display: inline-block;
+  background: rgba(0, 255, 204, 0.06); /* subtle teal glow background */
+  padding: 10px 16px;
+  color: var(--accent);                /* your neon cyan accent */
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 12px;                 /* rounded to match cards */
+  border: 1px solid rgba(0, 255, 204, 0.15);
+  transition: 0.25s ease;
+}
+
+.cert-btn:hover {
+  background: rgba(0, 255, 204, 0.15); 
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.25);
+  transform: translateY(-3px);
+}
 
 /* experience */
 .timeline{display:flex;flex-direction:column;gap:18px}
