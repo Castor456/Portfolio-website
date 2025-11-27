@@ -16,6 +16,8 @@ pipeline {
 		sh '''
                 rsync -avz --delete \
                          --exclude 'README.txt' \
+                         --exclude 'Dockerfile' \
+                         --exclude '.dockerignore' \
                          --exclude '/.git/' \
                          --exclude '.cpanel.yml' \
                          --exclude '/submissions/' \
