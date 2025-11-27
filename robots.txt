@@ -1,0 +1,10 @@
+# robots.txt for https://rishiboban.com
+User-agent: *
+Disallow: /private/
+Allow: /
+
+Sitemap: https://rishiboban.com/sitemap.xml
+# optional pointer if you publish an llms file:
+# (some AI crawlers may check /llms.txt)
+# Llms file:
+#   https://rishiboban.com/llms.txt
