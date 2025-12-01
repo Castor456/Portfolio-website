@@ -21,8 +21,9 @@ pipeline {
                          --exclude '/.git/' \
                          --exclude '.cpanel.yml' \
                          --exclude '/submissions/' \
-                         --exclude 'node_modules/' \
                          --exclude 'Jenkinsfile' \
+                         --exclude 'node_modules/' \
+                         --exclude 'portfolio.tar' \
                          -e "ssh -o StrictHostKeyChecking=no" ./ \
                 vmfmzkmy@sh00618.bluehost.com:/home2/vmfmzkmy/repositories/Portfolio-website/
                 '''
